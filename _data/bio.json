@@ -11,7 +11,7 @@
     "profiles": [
       { "network": "github", "username": "Anson2Leung", "url": "http://github.com/Anson2Leung" },
       { "network": "linkedin", "username": "Anson Leung", "url": "www.linkedin.com/in/anson-leung-cs" },
-      { "network": "Email", "email": "anson808al@gmail.com" }
+      { "network": "email", "email": "anson808al@gmail.com" }
     ]
   },
   "interests": [
@@ -26,7 +26,7 @@
     }
     {
       "name": "Toolsets/OS",
-      "keywords": [ "" ]
+      "keywords": []
     }
   ],
   "education": [
