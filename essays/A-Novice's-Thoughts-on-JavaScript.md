@@ -10,7 +10,7 @@ labels:
   - Learning
 ---
 
-<img width="100px" class="rounded float-start pe-4" src="../img/igniting/paintbrushes.jpg">
+<img width="100px" class="rounded float-start pe-4" src="../img/a-novice's-thoughts-on-javascript/freecodecamp.png">
 
 Before ICS 314 I believe I had little to no experience with JavaScript. The little experience I have with JavaScript came from when I helped my brother over the summer, when he tried learning Javascript with NeetCode. Although I do not know much about JavaScript, I have experience with Java, so the learning process was not extremely daunting. 
 
