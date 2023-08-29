@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: "Igniting the fire"
+title: "A Novice's Thoughts on JavaScript"
 # All dates must be YYYY-MM-DD format!
 date: 2023-08-28
 published: true
