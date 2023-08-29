@@ -10,7 +10,7 @@ labels:
   - Learning
 ---
 
-<img width="420px" class="rounded float-start pe-4" src="../img/a-novice's-thoughts-on-javascript/freecodecamp.png">
+<img width="400px" class="rounded float-start pe-4" src="../img/a-novice's-thoughts-on-javascript/freecodecamp.png">
 
 
 
