@@ -12,6 +12,8 @@ labels:
 
 <img width="699px" class="rounded float-start pe-4" src="../img/a-novice's-thoughts-on-javascript/freecodecamp.png">
 
+
+
 Before ICS 314 I believe I had little to no experience with JavaScript. The little experience I have with JavaScript came from when I helped my brother over the summer, when he tried learning Javascript with NeetCode. Although I do not know much about JavaScript, I have experience with Java, so the learning process was not extremely daunting. 
 
 FreeCodeCamp was a good introduction to JavaScript for me, but it started becoming a slog to complete each one. Although I did pick up key concepts, when the challenges got longer and tedious, I stopped acquiring and retaining that knowledge.
