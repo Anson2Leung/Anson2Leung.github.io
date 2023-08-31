@@ -1,30 +1,34 @@
 ---
 layout: project
 type: project
+<<<<<<< HEAD
+image: img/vacay/vacay-square.png
+title: "ICS 212 C Final Project"
+date: 2023
+=======
 image: img/ics212database/Cprogramming.png
 title: "ICS 212 Final C project"
 date: 2023-1-18
+>>>>>>> 1eee0a369ec153996bb279843b3dd53eb96cae7f
 published: true
 labels:
   - C
-  - C++
-summary: "Final assignment coding assingment for ICS 212, creating a basic data storage system with an user interface"
+summary: "Final assignment coding assingment for ICS 212, creating a basic data storage system with an user interface."
 ---
 
 <img width="100px" class="img-fluid" src="../img/ics212database/Cprogramming.png">
 
-## Overview
-The final coding assignment in ICS 212, Spring 2023. The project helped me learn how to read and write data into a txt file.
+# Overview
+The final coding assignment in ICS 212, Spring 2023. This project primarily helped me learn how to read and write data into a txt file.
 
-Using a linked list to store information such as their account number, name and address, allowing for a user to interact and add new entries or remove entries in the database. 
+Using a linked list to store account information such as their account number, name and address, allowing for a user to interact and add new entries or remove entries in the database. 
 
 When the user is done, the data is saved into a txt file, which will be read upon the next startup of the program.
 
-###
-
-## Difficulties
-### Saving data
-Writing data to a file
+# Difficulties
+## Saving Data
+### Writing data to a file
+The purpose of the writefile function is to iterate through the linkedlist database, read each record object and save that data into a txt file.
 
 ```c
 void writefile(struct record* database, char filename[])
@@ -41,7 +45,8 @@ void writefile(struct record* database, char filename[])
     return;
 }
 ```
-Deleting data to prevent memory leaks
+### Memory leak prevention
+Accomplished by iterating through the linkedlist, using the free function to release space reserved by the malloc function, before removing their pointers.
 
 ```c
 void cleanup(struct record** database)
@@ -59,27 +64,47 @@ void cleanup(struct record** database)
     return;
 }
 ```
-<hr>
 
-### Reading data
-
-Adding data to the linkedlist "database" from a txt file
+### Adding data to the linkedlist "database" from a txt file
+This readfile function was the main source of difficulty. The reason being the open-ended nature on how to save our data into a txt file. I decided to put each value for each record on their own line. But that causes a problem for an account holder's address, which allows for multiple line addresses.
 ```c
-void writefile(struct record* database, char filename[])
+void readfile(struct record** database, char filename[])
 {
-    struct record* curr_Record = database;
-    FILE *file = fopen( filename, "w" );
-    
-    while (curr_Record != NULL)
+    FILE *file;
+    file = fopen( filename, "r" );
+    if ( file != NULL )
     {
-        fprintf ( file, "%d\n%s%s;\n", curr_Record->accountno, curr_Record->name, curr_Record->address);
-        curr_Record = curr_Record->next;
+        int anum;
+        while ( EOF != fscanf ( file, "%d", &anum ))
+        {
+            char c = '\0';
+            char aname[30] = "";
+            char aaddress[50] = "";
+            fgetc (file);
+            fgets ( aname, 30, file );
+            while ( c != ';' )
+            {
+                c = fgetc(file);
+                if ( c != ';')
+                {
+                    strncat( aaddress, &c, 1 );
+                }
+            }
+            c = fgetc(file);
+            addRecord ( database, anum, aname, aaddress );
+            if ( debugMode == 1 )
+            {
+                printf( "readfile added a record\n" );
+            }
+        }
+        fclose(file);
     }
-    fclose(file);
     return;
 }
+}
 ```
-Function to create a linked node
+### Function to create a linked node
+All of the data collected by readfile is used to create the records in the linkedlist database using this addRecord function.
 ```c
 void addRecord(struct record** database, int actnum, char name[], char address[])
 {
