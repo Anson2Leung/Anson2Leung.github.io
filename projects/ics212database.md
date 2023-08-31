@@ -1,15 +1,9 @@
 ---
 layout: project
 type: project
-<<<<<<< HEAD
-image: img/vacay/vacay-square.png
-title: "ICS 212 C Final Project"
-date: 2023
-=======
 image: img/ics212database/Cprogramming.png
 title: "ICS 212 Final C project"
 date: 2023-3-24
->>>>>>> 1eee0a369ec153996bb279843b3dd53eb96cae7f
 published: true
 labels:
   - C
