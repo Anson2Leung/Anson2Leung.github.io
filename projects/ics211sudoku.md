@@ -73,4 +73,7 @@ The Sudoku is solved using a brute force approch, attemping each possible answer
     for(int i = 1; i < 11; i++) {
 ```
 On the first reading of the assignment it is natural to believe that to test each possible solution you will loop from 1-9 (the loop being from i<10), being each possible number in a Sudoku. But there was tons of problems, what should have been an easy solution was much more complicated than it seemed.
-I was confused why my code was either falling into an infinite loop or skipping the correct solution. After going through a bunch of debugging, getting fustrated and all, it was then that I noticed that the issues occured when the solution for a particular square was a "9."
+
+I was confused why my code was either falling into an infinite loop or getting stuck. After going through a bunch of debugging, getting fustrated and all, it was then that I noticed that the issues occured when the solution for a particular square was a "9."
+
+I was on my way home in my parent's car, thinking about the issue I had. Since we were stuck in traffic, I decided to just brainstorm some ideas on how the issue was caused. When I had the greatest, tiny breakthrough to change the fail condition of the code. Previously the loop stopped at 9 since I thought, "if it did not work the issue was at a previous number." Which was true, but sharing a possible solution with a fail condition was causing issues, so I allowed for the loop to go from 1-10.
