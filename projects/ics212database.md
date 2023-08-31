@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: img/ics212database/Cprogramming.png
-title: "ICS 212 C Final project"
+title: "ICS 212 Final C project"
 date: 2023-1-18
 published: true
 labels:
@@ -19,6 +19,8 @@ The final coding assignment in ICS 212, Spring 2023. The project helped me learn
 Using a linked list to store information such as their account number, name and address, allowing for a user to interact and add new entries or remove entries in the database. 
 
 When the user is done, the data is saved into a txt file, which will be read upon the next startup of the program.
+
+###
 
 ## Difficulties
 ### Saving data
