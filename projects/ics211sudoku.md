@@ -77,3 +77,8 @@ On the first reading of the assignment it is natural to believe that to test eac
 I was confused why my code was either falling into an infinite loop or getting stuck. After going through a bunch of debugging, getting fustrated and all, it was then that I noticed that the issues occured when the solution for a particular square was a "9."
 
 I was on my way home in my parent's car, thinking about the issue I had. Since we were stuck in traffic, I decided to just brainstorm some ideas on how the issue was caused. When I had the greatest, tiny breakthrough to change the fail condition of the code. Previously the loop stopped at 9 since I thought, "if it did not work the issue was at a previous number." Which was true, but sharing a possible solution with a fail condition was causing issues, so I allowed for the loop to go from 1-10.
+
+<hf>
+
+# Final Thoughts
+The great fustration in the end was resolved with a simple fix, all while I was stuck in traffic with the free time to spare a few thoughts. I brought out my laptop and proceeded to implement that change then and there, before witnessing a working solution. It is these situations which make programming so satisying to me.

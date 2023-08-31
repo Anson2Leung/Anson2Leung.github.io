@@ -168,5 +168,5 @@ void addRecord(struct record** database, int actnum, char name[], char address[]
 ```
 <hf>
 
-# Last Thoughts
+# Final Thoughts
 What I learned from this project was that I had quite the hard time with pointers. It took me a long time to understand the uses between pointers and dereferences (since they both are signaled with an astrisk). 
