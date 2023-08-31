@@ -61,7 +61,7 @@ void cleanup(struct record** database)
 
 ### Reading data
 
-Adding data to the linkedlist from a txt file
+Adding data to the linkedlist "database" from a txt file
 ```c
 void writefile(struct record* database, char filename[])
 {
