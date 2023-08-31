@@ -8,7 +8,7 @@ date: 2023
 =======
 image: img/ics212database/Cprogramming.png
 title: "ICS 212 Final C project"
-date: 2023-1-18
+date: 2023-3-24
 >>>>>>> 1eee0a369ec153996bb279843b3dd53eb96cae7f
 published: true
 labels:
@@ -16,7 +16,7 @@ labels:
 summary: "Final assignment coding assingment for ICS 212, creating a basic data storage system with an user interface."
 ---
 
-<img width="100px" class="img-fluid" src="../img/ics212database/Cprogramming.png">
+<img width="100px" class="img-fluid" src="../img/ics212database/ICS212Project1.png">
 
 # Overview
 The final coding assignment in ICS 212, Spring 2023. This project primarily helped me learn how to read and write data into a txt file.
@@ -172,4 +172,5 @@ void addRecord(struct record** database, int actnum, char name[], char address[]
     }
 }
 ```
-
+<hf>
+What I learned from this project was that I had quite the hard time with pointers. It took me a long time to understand the uses between pointers and dereferences (since they both are signaled with an astrisk). 
