@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/ics212database/Cprogramming.png
 title: "ICS 212 Final C project"
-date: 2023-3-24
+date: 2023-03-24
 published: true
 labels:
   - C
