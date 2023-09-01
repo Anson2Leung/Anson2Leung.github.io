@@ -6,9 +6,9 @@
 
 /* See https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables for variables to override. */
 :root {
-  --tf-purple1: #82287d;
+  --tf-purple1: #a74ca2b0;
   --tf-purple2: #1b6fa9;
-  --tf-purple3: #2f8ed0;
+  --tf-purple3: #9b3095;
   --tf-purple4: #d16ccb;
   --bs-font-sans-serif: "Open Sans", sans-serif;
   --bs-link-color: var(--tf-purple1);
