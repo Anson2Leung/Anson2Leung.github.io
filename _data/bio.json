@@ -7,7 +7,7 @@
     "phone": "808-773-0877",
     "website": "https://Anson2Leung.github.io",
     "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2026.",
-    "location": { "address": "", "postalCode": "96822", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
+    "location": { "address": "", "postalCode": "96825", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
     "profiles": [
       { "network": "github", "username": "Anson2Leung", "url": "http://github.com/Anson2Leung" },
       { "network": "linkedin", "username": "Anson Leung", "url": "https://www.linkedin.com/in/anson-leung-cs" },
@@ -16,7 +16,7 @@
   "interests": [
     { "name": "Software Engineering" },
     { "name": "Game Design" },
-    { "name": "Machine Learning" },
+    { "name": "Machine Learning" }
   ],
   "skills": [
     {
@@ -53,12 +53,12 @@
   ],
   "volunteer": [
     {
-      "organization": "",
+      "organization": "Hawaii District Court of The First Circuit",
       "website": "",
-      "position": "",
-      "startDate": "",
+      "position": "Assistant Clerk",
+      "startDate": "2022-6",
       "endDate": "",
-      "summary": "",
+      "summary": "Verified document scans for complete info",
       "highlights": [
       ]
     }
