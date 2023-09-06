@@ -13,6 +13,8 @@ labels:
 
 <img width="300px" class="rounded float-start pe-4" src="../img/asking-questions/StackOverflow.png">
 
+<hf>
+
 ## Asking Smart Questions
 
 Written by Eric Steven Raymond, [How To Ask Questions The Smart Way](http://www.catb.org/esr/faqs/smart-questions.html), gives an overview on how to properly interact with the open source community, to properly ask for and get what you want. The act of doing so is summed up by asking “smart” questions.
