@@ -16,6 +16,7 @@ labels:
 ## Asking Smart Questions
 
 Written by Eric Steven Raymond, [How To Ask Questions The Smart Way](http://www.catb.org/esr/faqs/smart-questions.html), gives an overview on how to properly interact with the open source community, to properly ask for and get what you want. The act of doing so is summed up as asking “smart” questions.
+
 The main points are:
 1. Do as much as you can before asking for help, (Do you need to make a call to the community, or can find the answer yourself?)
 2. Be polite, be efficient, and always plan out the formatting of your question. (Do not include unnecessary filler details. Make sure to respond respectfully to those trying to help you.)
