@@ -10,7 +10,7 @@ labels:
 summary: "Final assignment coding assingment for ICS 212, creating a basic data storage system with an user interface."
 ---
 
-<img width="25%" class="img-fluid" src="../img/ics212database/ICS212Project1.png">
+<img width="30%" class="img-fluid" src="../img/ics212database/ICS212Project1.png">
 
 # Overview
 The final coding assignment in ICS 212, Spring 2023. This project primarily helped me learn how to read and write data into a txt file.
