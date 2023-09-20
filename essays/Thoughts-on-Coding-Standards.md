@@ -10,8 +10,7 @@ labels:
   - Learning
 ---
 
-[//]: # (<img width="400px" class="rounded float-start pe-4" src="../img/First-Time/FirstTime.jpg">)
-
+<img width="400px" class="rounded float-start pe-4" src="../img/Thoughts-on-Coding-Standards/ManHoldingHead.jpeg">
 
 ## Thoughts on Coding Standards
 I believe that coding standards are extremely annoying, having to insert some spaces here and there to give a little space between parentheses and braces, just to satisfy the coding standard. However, the use or knowledge of coding standards provides a strong baseline in learning how to code. More importantly, it makes it easier for others and yourself to review and critique the code you wrote. There is a huge difference between having an excessive amount of spaces at the end of a line compared to having no indentation in your program.
