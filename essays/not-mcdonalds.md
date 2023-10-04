@@ -4,7 +4,7 @@ type: essay
 title: "Not McDonald's"
 # All dates must be YYYY-MM-DD format!
 date: 2023-10-03
-published: false
+published: true
 labels:
   - Software Engineering
   - Learning
