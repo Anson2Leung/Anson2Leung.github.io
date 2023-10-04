@@ -18,7 +18,8 @@ labels:
 ## Not McDonald's  
 
 Using Bootstrap, HTML, and CSS, I reproduced the McDonald’s website. Visually. To an extent.  
-The top one being the real McDonald's.
+The top one being the real McDonald's.  
+
 ***
 <img src="../img/not-mcdonalds/McDonalds.png" width="75%">  
 
