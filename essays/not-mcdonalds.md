@@ -19,7 +19,9 @@ labels:
 
 Using Bootstrap, HTML, and CSS, I reproduced the McDonald’s website. Visually. To an extent.  
 
-|![McDonald's](../img/not-mcdonalds/McDonalds.png)|![MacDonald's](../img/not-mcdonalds/MacDonalds.png)|  
+<img src="../img/not-mcdonalds/McDonalds.png" width="200px">  
+
+![MacDonald's](../img/not-mcdonalds/MacDonalds.png)  
 
 ## HTML, CSS, and Bootstrap  
 
