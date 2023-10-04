@@ -19,10 +19,12 @@ labels:
 
 Using Bootstrap, HTML, and CSS, I reproduced the McDonald’s website. Visually. To an extent.  
 
-<img class="rounded float-start pe-4" src="../img/not-mcdonalds/McDonalds.png">  
+<img width="50%" class="rounded float-start pe-4" src="../img/not-mcdonalds/McDonalds.png">  
 
 
-<img class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonalds.png">  
+<img width="50%" class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonalds.png">  
+
+|![McDonald's](../img/not-mcdonalds/McDonalds.png)|![MacDonald's](../img/not-mcdonalds/MacDonalds.png)|
 
 ## HTML, CSS, and Bootstrap  
 
