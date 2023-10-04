@@ -19,10 +19,10 @@ labels:
 
 Using Bootstrap, HTML, and CSS, I reproduced the McDonald’s website. Visually. To an extent.  
 
-<img width="400px" class="rounded float-start pe-4" src="../img/not-mcdonalds/McDonalds.png">  
+<img class="rounded float-start pe-4" src="../img/not-mcdonalds/McDonalds.png">  
 
 
-<img width="400px" class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonalds.png">  
+<img class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonalds.png">  
 
 ## HTML, CSS, and Bootstrap  
 
@@ -35,13 +35,13 @@ recreate McDonald’s website. I would have a much harder time if I were to use 
 Even if you wanted to purely focus on back-end development. Knowing the bare minimum in UI development is important to testing and presenting your work to others. A little presentability goes a long way. 
 Take the two images below:  
 
-<img width="400px" class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonalds_Topbar.png">  
+<img class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonalds_Topbar.png">  
 
-<img width="400px" class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonaldsExample_Scrunch.png">  
+<img class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonaldsExample_Scrunch.png">  
 
 One looks a little better than the other, but if this were someone’s test for their backend, looking a little better makes no difference.
 But what if it looked like this:  
 
-<img width="400px" class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonaldsExample_OneWord.png">
+<img class="rounded float-start pe-4" src="../img/not-mcdonalds/MacDonaldsExample_OneWord.png">
 
 Where the words are essentially merging together, a solo developer may be able to see past this when testing, but it will take time for onlookers to understand.
