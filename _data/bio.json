@@ -10,22 +10,22 @@
     "location": { "address": "", "postalCode": "96825", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
     "profiles": [
       { "network": "github", "username": "Anson2Leung", "url": "http://github.com/Anson2Leung" },
-      { "network": "linkedin", "username": "Anson Leung", "url": "https://www.linkedin.com/in/anson-leung-cs" },
+      { "network": "linkedin", "username": "Anson Leung", "url": "https://www.linkedin.com/in/anson-leung-cs" }
     ]
   },
   "interests": [
-    { "name": "Software Engineering" },
+    { "name": "Software Development" },
     { "name": "Game Design" },
     { "name": "Machine Learning" }
   ],
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "C", "C++", "Java", "Python" ]
+      "keywords": [ "C", "C++", "Java", "Javascript", "Meteor", "Python", "React" ]
     },
     {
       "name": "Toolsets/OS",
-      "keywords": []
+      "keywords": [ "GitHub", "Intellij IDEA"]
     }
   ],
   "education": [
@@ -35,7 +35,7 @@
       "studyType": "B.S.",
       "startDate": "2022-09-22",
       "endDate": "Present",
-      "courses": ["ICS 211", "ICS 212"
+      "courses": ["ICS 211", "ICS 212", "ICS 314"
       ]
     }
   ],
@@ -46,8 +46,11 @@
       "website": "",
       "startDate": "2023",
       "endDate": "Present",
-      "summary": "Organize and shelve books",
+      "summary": "Support the library staff in running and maintaining the library",
       "highlights": [
+        "Maintenance and organization of library’s books",
+        "Organizing books for shipping (between libraries)",
+        "Preparing books for RFID tagging, modernization of the library"
       ]
     }
   ],
@@ -58,8 +61,21 @@
       "position": "Assistant Clerk",
       "startDate": "2022-6",
       "endDate": "",
-      "summary": "Verified document scans for complete info",
+      "summary": "Handling paper documents of court proceedings",
       "highlights": [
+        "Verified scanned copies of documents for errors"
+      ]
+    },
+    {
+      "organization": "PANDA (Programming AND Algorithms) Club Officer @ University of Hawaii at Manoa",
+      "website": "https://acmmanoa.org/pages/clubs/panda/",
+      "position": "Club officer",
+      "startDate": "2022-8",
+      "endDate": "",
+      "summary": "Supported University of Hawaii ACM's PANDA club as a \"Big Panda\"",
+      "highlights": [
+        "Develop curriculum to assist members improve their computer science problem solving skills",
+        "Instruct and teach computer science concepts"
       ]
     }
   ],
