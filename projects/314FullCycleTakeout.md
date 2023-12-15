@@ -27,7 +27,7 @@ For this project I got my first look into software development as a team. Being 
 Throughout the project we applied Issue Driven Project Management (IDPM) in a semi-realistic setting. I previously shared my thoughts on it in my essay titled ["Software Engineering and ICS 314"](https://anson2leung.github.io/essays/software-engineering-and-ics314.html). As a summary IDPM is an example of agile project management, with its unique aspect of dividing up the project into smaller tasks called "issues."
 Breaking down and delegating tasks for IDPM were difficult as it was hard to assess the difficulty of certain tasks, as many parts would build off another. Developing off a previous issue would also require a clear understanding of the inner-workings of those previous issues.
 
-Although comparatively my abilities for Meteor are not impressive, I was able to learn and support my team members for both front and back-end, alongside handling the documentation of our project. You can see them on our project page: [https://314firesheep.github.io](https://314firesheep.github.io) 
+Although comparatively my abilities for Meteor are not impressive, I was able to learn and support my team members for both front and back-end, alongside handling the documentation of our project. You can see them on our project page here or down in the Links section: [https://314firesheep.github.io](https://314firesheep.github.io) 
 
 ### Examples
 Images come from our project page which is linked above. Images are cut-off as I was unable to take a screenshot of the entire page.
