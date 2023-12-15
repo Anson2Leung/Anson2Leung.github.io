@@ -16,7 +16,7 @@ summary: "ICS 314 Final assignment, adapted from a team project for the 2023 Haw
 <img width="80%" class="img-fluid" src="../img/314FCT/welcome-to-firesheep.png">
 
 # HACC Full Cycle Takeout
-For the 2023 Hawaii Annual Code Challenge, me and four others (Brain Shu, Elijah Saloma, Joy Tan and Samuel Yang), took on the challenge proposed by Zero Waste Oahu [(Click here to see the full list of challenges)](https://hacc.hawaii.gov/challenges/). The objective was to create an application to supplement their Full Cycle Takeout, a reusable container and utensils rental program. The end goal was for the application to speed up the process of keeping track of rentals and to hold those who rented items financially responsible. 
+For the 2023 Hawaii Annual Code Challenge, me and four others (Brain Shu, Elijah Saloma, Joy Tan and Samuel Yang), took on the challenge proposed by Zero Waste Oahu [(Click here to see the full list of challenges)](https://hacc.hawaii.gov/challenges/). The objective was to create an application to supplement their Full Cycle Takeout, a reusable container and utensils rental program. The end goal was for the application to speed up the process of keeping track of rentals and to hold those who rented items financially responsible. The underlying program can also be adapted to fit more use cases. Although there is no method within the application to modify the rentable items from the position of a user. It simply will take some time to modify which items are able to be rented from the back-end. 
 
 ## ICS 314 Full Cycle Takeout
 The HACC project was developed using Express.js, Firebase, and Mongoose, alongside MongoDB, qrCode, and React. The issue with this was that for ICS 314, it would be constructed using MeteorJS, MongoDB, and React. So the application developed for the HACC had to be adapted to fit the final project class requirements.
@@ -43,6 +43,8 @@ _After formatting the page becomes..._
 _After styling the ends up as..._
 
 ![](../img/314FCT/ResultM3.png)
+
+A similar process was done for most of the pages, after creating our own understanding of what should be included. We would then proceed to make it appear much more beautiful than the initial creation.
 
 ## Links
 Link to GitHub repository
