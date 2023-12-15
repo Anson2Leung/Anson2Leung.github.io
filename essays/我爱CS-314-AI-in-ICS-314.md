@@ -12,6 +12,8 @@ labels:
   - ICS 314
 ---
 
+![](../img/ai-in-ICS-314/Robot.jpg)
+
 ## Introduction
 Generative AI such as ChatGPT and Bing AI greatly shifted the educational landscape in and outside of software development.In some cases the use of generative AI can completely perform entire assignments on behalf of the student. But in regards to ICS 314, I usually use generative AI to explain coding concepts and definitions, so I have only used ChatGPT and Bing AI.
 ## Personal Experience with AI:

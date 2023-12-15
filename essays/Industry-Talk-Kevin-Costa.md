@@ -10,6 +10,8 @@ labels:
   - Industry Talk
 ---
 
+![](../img/business-solution-technologies/bst.png)
+
 ## Overview
 On August 30th, Kevin Costa from Business Solution Technologies, came to UH Manoa to be a guest for the Tech Industry Guest Talk. Unfortunately due to already having other business I had to take care of, resulting in missing the first quarter of the presentation, but I believe that I did not miss anything important during that time. I watched the presentation given by Kevin Costa through Zoom, which although gave me more freedom to where I can watch it, allowing me to watch without distractions, but it limited the intractability with the speaker.
 
