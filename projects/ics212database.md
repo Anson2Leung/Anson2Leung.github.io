@@ -98,7 +98,7 @@ void readfile(struct record** database, char filename[])
 }
 ```
 ### Function to create a linked node
-All of the data collected by readfile is used to create the records in the linkedlist database using this addRecord function.
+All the data collected by readfile is used to create the records in the linkedlist database using this addRecord function.
 ```c
 void addRecord(struct record** database, int actnum, char name[], char address[])
 {
@@ -166,7 +166,6 @@ void addRecord(struct record** database, int actnum, char name[], char address[]
     }
 }
 ```
-<hf>
 
 # Final Thoughts
-What I learned from this project was that I had quite the hard time with pointers. It took me a long time to understand the uses between pointers and dereferences (since they both are signaled with an astrisk). 
+What I learned from this project was that I had quite the hard time with pointers. It took me a long time to understand the uses between pointers and dereferences (since they both are signaled with an asterisk). 
