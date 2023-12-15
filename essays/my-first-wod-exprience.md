@@ -10,7 +10,7 @@ labels:
   - JavaScript
 ---
 
-![](../img/my-first-wod-experience/speedtype.jpg)
+<img width="500px" class="rounded float-start pe-4" src="../img/my-first-wod-experience/speedtype.jpg">
 
 ## Workout of the Day
 In ICS 314 we have “Workout of the Day” coding exercises which are shortened to WODs. Although there were practice WODs before the first official WOD conducted in class, the main focus of this essay is about the BertErnie WOD.

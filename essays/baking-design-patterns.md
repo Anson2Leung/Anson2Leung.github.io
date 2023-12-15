@@ -11,7 +11,7 @@ labels:
   - Design Patterns
 ---
 
-![](../img/baking-design-patterns/Cookies.jpg)
+<img width="400px" class="rounded float-start pe-4" src="../img/baking-design-patterns/Cookies.jpg">
 
 ## Design Patterns
 On my first look at design patterns, I had no idea what I was looking at with all of their fancy names. Although [Patterns.dev](https://www.patterns.dev/#patterns) focuses on Javascript and React, upon closer inspection of the design patterns were not only applied within ICS 314, but in other ICS classes as well. The question shifted from, “What are design patterns?” to “Which design patterns have we used?”

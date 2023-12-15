@@ -4,7 +4,7 @@ type: essay
 title: "A Novice's Thoughts on JavaScript"
 # All dates must be YYYY-MM-DD format!
 date: 2023-08-28
-published: true
+published: false
 labels:
   - Software Engineering
   - Learning
