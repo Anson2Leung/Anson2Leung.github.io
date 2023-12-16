@@ -10,7 +10,7 @@ labels:
   - Learning
 ---
 
-![](../img/time-estimation/clock.jpg)
+<img width="500px" class="rounded float-start pe-4" src="../img/time-estimation/clock.jpg">
 
 # Time Estimation 
 
