@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="ICS 211 Sudoku Solver | Anson Leung | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/Anson2Leung.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Anson Leung | Professional Portfolio">
+    <meta property="og:url" content="https://Anson2Leung.github.io/projects/ics211sudoku.html">
+    <meta property="og:title" content="ICS 211 Sudoku Solver | Anson Leung | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/Anson2Leung.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/purple.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>ICS 211 Sudoku Solver | Anson Leung | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Anson Leung</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">ICS 211 Sudoku Solver</h1>
+ <p><img width="50%" class="img-fluid" src="../img/ics211sudoku/recursion.jpg" /></p>
+
+<h1 id="overview">Overview</h1>
+<p>The objective of this assignment was to complete the function “fillSudoku(int[][]sudoku). As the title suggests the purpose of the function is to return a valid Sudoku with all of its spaces filled. Although the assignment was short, it tested the extent of our understanding and application of recursion.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Sudoku">Learn about Sudokus here</a></p>
+
+<p>Each individual was to implement a working Sudoku solver. The function fillSudoku took in a 2-D int array which is the representation of the Sudoku, and returns a boolean. The function returns true if the Sudoku is complete, but a false return value can be utilized in solving the Sudoku.</p>
+<h1 id="my-implementation">My Implementation</h1>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">public</span> <span class="k">static</span> <span class="n">boolean</span> <span class="nf">fillSudoku</span><span class="p">(</span><span class="kt">int</span><span class="p">[][]</span><span class="n">sudoku</span><span class="p">)</span> <span class="p">{</span>
+	    <span class="c1">//Find 0</span>
+	    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//row</span>
+	    <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//col</span>
+	    <span class="n">boolean</span> <span class="n">found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// if a zero was found</span>
+	    <span class="c1">//find next empty cell</span>
+	    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sudoku</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	    	<span class="k">if</span><span class="p">(</span><span class="n">found</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+	    		<span class="k">break</span><span class="p">;</span>
+	    	<span class="p">}</span>
+	    	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">sudoku</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	    		<span class="c1">//System.out.println(sudoku[i][j]); //testing iteration</span>
+	    		<span class="k">if</span><span class="p">(</span><span class="n">sudoku</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+	    			<span class="n">row</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+	    			<span class="n">col</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+	    			<span class="n">found</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+	    			<span class="k">break</span><span class="p">;</span>
+	    		<span class="p">}</span>
+	    	<span class="p">}</span>
+	    <span class="p">}</span>
+	    <span class="c1">//Is the Sudoku complete?</span>
+	    <span class="k">if</span> <span class="p">(</span><span class="n">found</span> <span class="o">==</span> <span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="n">Sudoku</span><span class="p">.</span><span class="n">checkSudoku</span><span class="p">(</span><span class="n">sudoku</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span> <span class="p">{</span>
+	    	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	    <span class="p">}</span>
+	    
+	    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// it will go to 10</span>
+	    	<span class="n">sudoku</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+	    	<span class="cm">/**
+	    	 * Had a problem where if a 9 was a valid it would not clear and backtrack
+	    	 * so I let the value increment once more so if it gets to 10 then I backtrack 
+	    	 */</span>
+	    	<span class="k">if</span><span class="p">(</span><span class="n">sudoku</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">9</span><span class="p">)</span> <span class="p">{</span>
+	    		<span class="c1">//reset current position and backtrack</span>
+	    		<span class="n">sudoku</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	    		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+	    	<span class="p">}</span>
+	    	<span class="k">if</span><span class="p">(</span><span class="n">Sudoku</span><span class="p">.</span><span class="n">checkSudoku</span><span class="p">(</span><span class="n">sudoku</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span> <span class="p">{</span>
+	    		<span class="c1">//if the sudoku is complete, end all the recursions</span>
+	    		<span class="k">if</span><span class="p">(</span><span class="n">Sudoku</span><span class="p">.</span><span class="n">fillSudoku</span><span class="p">(</span><span class="n">sudoku</span><span class="p">))</span> <span class="p">{</span>
+	    			<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	    		<span class="p">}</span>
+	    	<span class="p">}</span>
+	    <span class="p">}</span>
+	    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<h1 id="difficulties">Difficulties</h1>
+<h2 id="fail-condition">Fail Condition</h2>
+<p>The Sudoku is solved using a brute force approch, attemping each possible answer until a correct one is uncovered. See the following exerpt of the above code…</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div></div>
+<p>On the first reading of the assignment it is natural to believe that to test each possible solution you will loop from 1-9 (the loop being from i&lt;10), being each possible number in a Sudoku. But there was tons of problems, what should have been an easy solution was much more complicated than it seemed.</p>
+
+<p>I was confused why my code was either falling into an infinite loop or getting stuck. After going through a bunch of debugging, getting fustrated and all, it was then that I noticed that the issues occured when the solution for a particular square was a “9.”</p>
+
+<p>I was on my way home in my parent’s car, thinking about the issue I had. Since we were stuck in traffic, I decided to just brainstorm some ideas on how the issue was caused. When I had the greatest, tiny breakthrough to change the fail condition of the code. Previously the loop stopped at 9 since I thought, “if it did not work the issue was at a previous number.” Which was true, but sharing a possible solution with a fail condition was causing issues, so I allowed for the loop to go from 1-10.</p>
+
+<hf>
+
+# Final Thoughts
+The great fustration in the end was resolved with a simple fix, all while I was stuck in traffic with the free time to spare a few thoughts. I brought out my laptop and proceeded to implement that change then and there, before witnessing a working solution. It is these situations which make programming so satisying to me.
+</hf>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

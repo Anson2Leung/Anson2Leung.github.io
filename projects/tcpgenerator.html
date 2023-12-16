@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="TCP Response Header Generator | Anson Leung | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/Anson2Leung.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Anson Leung | Professional Portfolio">
+    <meta property="og:url" content="https://Anson2Leung.github.io/projects/tcpgenerator.html">
+    <meta property="og:title" content="TCP Response Header Generator | Anson Leung | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/Anson2Leung.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/purple.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>TCP Response Header Generator | Anson Leung | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Anson Leung</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">TCP Response Header Generator</h1>
+ <p><img width="50%" class="img-fluid" src="../img/tcpgenerator/TCPresponse.JPG" /></p>
+
+<h1 id="overview">Overview</h1>
+<p>The main goal of this assignment from ICS 211 was to develop a program that can read a binary file (containing information of a TCP header), generate a TCP response header, and to write the TCP response header into a binary file.</p>
+
+<p>This assignment also tested your knowledge of bit-wise operators, as they are necessary in creating the response header.</p>
+
+<h2 id="printing-a-header">Printing a header</h2>
+<p>Simply converts a TCP header that being stored in a unsigned char array to a format more understandable to humans. Each byte is associated with a certain part of the TCP header. For more percise sections, a mixture of bit-shifts and bitwise operators are used.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">printheader</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">headArr</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">seqnum</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">acknum</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">loop</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Source port: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">headArr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">headArr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Destination port: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">headArr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">headArr</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">loop</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">loop</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">loop</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">seqnum</span> <span class="o">=</span> <span class="n">seqnum</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">headArr</span><span class="p">[</span><span class="n">loop</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Sequence number: %u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">seqnum</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">loop</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span> <span class="n">loop</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">;</span> <span class="n">loop</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">acknum</span> <span class="o">=</span> <span class="n">acknum</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">headArr</span><span class="p">[</span><span class="n">loop</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Acknowlegment number: %u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">acknum</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Control bits: </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">headArr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">32</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"URG</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">headArr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"ACK</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">headArr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"PSH</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">headArr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"RST</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">headArr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"SYN</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">headArr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"FIN</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="difficulties">Difficulties</h1>
+<h2 id="creating-a-response-header">Creating a response header</h2>
+<p>Implementing a response header function was not too difficult, but it was a long process. Since there is a percise set of changes performed on the input TCP header to generate the response header. One will have to go through each part slowly to confirm they are creating the response header correctly, since it is easy to mix-up their byte locations.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">makeheader</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">inputTCP</span><span class="p">[],</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">responseTCP</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">sequence</span><span class="p">;</span>
+
+    <span class="cm">/*Source port Greater than 32767, by checking if second byte is greater than 128 swap */</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">inputTCP</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">7</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cm">/*pre-emptively setting them to destination ports*/</span>
+        <span class="cm">/*flip 4th bit: second byte 5th from the right*/</span>
+        <span class="n">responseTCP</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">4</span><span class="p">);</span>
+
+        <span class="cm">/*flip 11th bit: first byte 6th from the right */</span>
+        <span class="n">responseTCP</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">5</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">responseTCP</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="n">responseTCP</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*switch source and destination*/</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="cm">/*set acknowledgment to sequence*/</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span>
+
+    <span class="cm">/*set sequence number to sequence number++*/</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">24</span> <span class="o">|</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">16</span> <span class="o">|</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="n">sequence</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">;</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">&gt;&gt;</span><span class="mi">8</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">;</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">&gt;&gt;</span><span class="mi">16</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">;</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">&gt;&gt;</span><span class="mi">24</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">;</span>
+
+    <span class="cm">/*Control bits are in the 14th byte the last 6 bits*/</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">;</span>
+
+    <span class="cm">/*check for SYN 2nd bit from the right in the 14th byte*/</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">inputTCP</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">))</span> <span class="o">!=</span><span class="mi">0</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">responseTCP</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">responseTCP</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">|</span> <span class="mi">18</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* the rest*/</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">14</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">18</span><span class="p">];</span>
+    <span class="n">responseTCP</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputTCP</span><span class="p">[</span><span class="mi">19</span><span class="p">];</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hf>
+
+# Final Thoughts
+Figuring the correct use of bitwise operators for this assignment was very interesting. Although this assignment seemed very daunting at first, seeing yourself progress through each section gives you encouragment to continue. Before I knew it I was almost done.
+</hf>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
